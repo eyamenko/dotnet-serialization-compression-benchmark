@@ -21,7 +21,7 @@ namespace DotnetSerializationCompressionBenchmark.Processors
         {
             var serializer = MessagePackSerializer.Get<T>();
 
-            using var ms = new MemoryStream();
+            using var ms = new MemoryStream(bytes);
 
             return serializer.Unpack(ms);
         }
