@@ -1,5 +1,8 @@
-﻿namespace DotnetSerializationCompressionBenchmark.Models
+﻿using System;
+
+namespace DotnetSerializationCompressionBenchmark.Models
 {
+    [Flags]
     public enum EnquiryContactPreference
     {
         ByPhone = 1,
