@@ -18,7 +18,7 @@ namespace DotnetSerializationCompressionBenchmark.Processors
             var bytes = _processor.Process(item);
 
             using var outputStream = new MemoryStream();
-            using var deflateStream = new DeflateStream(outputStream, CompressionLevel.Optimal);
+            using var deflateStream = new DeflateStream(outputStream, CompressionMode.Compress);
 
             deflateStream.Write(bytes, 0, bytes.Length);
 
