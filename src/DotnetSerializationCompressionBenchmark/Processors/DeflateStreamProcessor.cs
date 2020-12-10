@@ -18,9 +18,11 @@ namespace DotnetSerializationCompressionBenchmark.Processors
             var bytes = _processor.Process(item);
 
             using var outputStream = new MemoryStream();
-            using var deflateStream = new DeflateStream(outputStream, CompressionMode.Compress);
 
-            deflateStream.Write(bytes, 0, bytes.Length);
+            using (var deflateStream = new DeflateStream(outputStream, CompressionMode.Compress))
+            {
+                deflateStream.Write(bytes, 0, bytes.Length);
+            }
 
             return outputStream.ToArray();
         }
@@ -29,9 +31,11 @@ namespace DotnetSerializationCompressionBenchmark.Processors
         {
             using var outputStream = new MemoryStream();
             using var inputStream = new MemoryStream(bytes);
-            using var deflateStream = new DeflateStream(inputStream, CompressionMode.Decompress);
 
-            deflateStream.CopyTo(outputStream);
+            using (var deflateStream = new DeflateStream(inputStream, CompressionMode.Decompress))
+            {
+                deflateStream.CopyTo(outputStream);
+            }
 
             return _processor.Unprocess<T>(outputStream.ToArray());
         }
