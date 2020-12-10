@@ -1,5 +1,4 @@
 ﻿using DotnetSerializationCompressionBenchmark.Contracts;
-using MessagePack;
 
 namespace DotnetSerializationCompressionBenchmark.Processors
 {

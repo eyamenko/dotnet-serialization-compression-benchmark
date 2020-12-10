@@ -5,7 +5,7 @@ namespace DotnetSerializationCompressionBenchmark.Models
 {
     public class Listing
     {
-        public readonly static Listing Sample = new Listing
+        public static readonly Listing Sample = new Listing
         {
             AddressParts = new AddressParts
             {
