@@ -10,7 +10,7 @@ namespace DotnetSerializationCompressionBenchmark
         [BenchmarkCategory(nameof(ProcessorType.MsgPackCli))]
         public Listing MsgPackCli() => ProcessorFactory.Listing[ProcessorType.MsgPackCli].Unprocess();
 
-        [Benchmark]
+        [Benchmark(Baseline = true)]
         [BenchmarkCategory(nameof(ProcessorType.NewtonsoftJson))]
         public Listing NewtonsoftJson() => ProcessorFactory.Listing[ProcessorType.NewtonsoftJson].Unprocess();
 
