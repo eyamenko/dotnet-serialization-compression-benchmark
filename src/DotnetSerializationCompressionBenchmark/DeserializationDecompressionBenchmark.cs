@@ -7,6 +7,10 @@ namespace DotnetSerializationCompressionBenchmark
     public class DeserializationDecompressionBenchmark
     {
         [Benchmark]
+        [BenchmarkCategory(nameof(ProcessorType.MessagePack))]
+        public Listing MessagePack() => ProcessorFactory.Listing[ProcessorType.MessagePack].Unprocess();
+
+        [Benchmark]
         [BenchmarkCategory(nameof(ProcessorType.MsgPackCli))]
         public Listing MsgPackCli() => ProcessorFactory.Listing[ProcessorType.MsgPackCli].Unprocess();
 
@@ -23,6 +27,10 @@ namespace DotnetSerializationCompressionBenchmark
         public Listing Utf8Json() => ProcessorFactory.Listing[ProcessorType.Utf8Json].Unprocess();
 
         [Benchmark]
+        [BenchmarkCategory(nameof(ProcessorType.DeflateStreamMessagePack))]
+        public Listing DeflateStreamMessagePack() => ProcessorFactory.Listing[ProcessorType.DeflateStreamMessagePack].Unprocess();
+
+        [Benchmark]
         [BenchmarkCategory(nameof(ProcessorType.DeflateStreamMsgPackCli))]
         public Listing DeflateStreamMsgPackCli() => ProcessorFactory.Listing[ProcessorType.DeflateStreamMsgPackCli].Unprocess();
 
@@ -37,6 +45,10 @@ namespace DotnetSerializationCompressionBenchmark
         [Benchmark]
         [BenchmarkCategory(nameof(ProcessorType.DeflateStreamUtf8Json))]
         public Listing DeflateStreamUtf8Json() => ProcessorFactory.Listing[ProcessorType.DeflateStreamUtf8Json].Unprocess();
+
+        [Benchmark]
+        [BenchmarkCategory(nameof(ProcessorType.LZ4MessagePack))]
+        public Listing LZ4MessagePack() => ProcessorFactory.Listing[ProcessorType.LZ4MessagePack].Unprocess();
 
         [Benchmark]
         [BenchmarkCategory(nameof(ProcessorType.LZ4MsgPackCli))]
