@@ -30,23 +30,23 @@ Intel Core i7-8550U CPU 1.80GHz (Kaby Lake R), 1 CPU, 8 logical and 4 physical c
 
 
 ```
-|                      Method |     Mean |    Error |    StdDev |   Median | Ratio | RatioSD | Size |
-|---------------------------- |---------:|---------:|----------:|---------:|------:|--------:|-----:|
-|                 MessagePack | 226.6 μs | 57.48 μs | 168.58 μs | 133.4 μs |  0.93 |    0.76 | 4085 |
-|                  MsgPackCli | 329.8 μs | 75.20 μs | 220.54 μs | 203.7 μs |  1.27 |    0.87 | 1616 |
-|              NewtonsoftJson | 275.6 μs | 28.61 μs |  81.15 μs | 244.4 μs |  1.00 |    0.00 | 5235 |
-|              SystemTextJson | 277.4 μs | 50.46 μs | 147.20 μs | 203.2 μs |  1.07 |    0.62 | 5221 |
-|                    Utf8Json | 258.0 μs | 48.74 μs | 139.06 μs | 190.4 μs |  0.99 |    0.57 | 5504 |
-|    DeflateStreamMessagePack | 371.7 μs | 59.78 μs | 174.38 μs | 285.9 μs |  1.49 |    0.85 | 1889 |
-|     DeflateStreamMsgPackCli | 423.0 μs | 82.43 μs | 241.74 μs | 286.8 μs |  1.69 |    1.08 |  844 |
-| DeflateStreamNewtonsoftJson | 414.3 μs | 29.67 μs |  84.16 μs | 393.8 μs |  1.60 |    0.44 | 1790 |
-| DeflateStreamSystemTextJson | 402.1 μs | 50.43 μs | 145.50 μs | 337.7 μs |  1.54 |    0.62 | 1788 |
-|       DeflateStreamUtf8Json | 424.6 μs | 62.97 μs | 183.69 μs | 329.6 μs |  1.66 |    0.85 | 1896 |
-|              LZ4MessagePack | 274.8 μs | 61.36 μs | 179.96 μs | 183.8 μs |  1.11 |    0.83 | 2561 |
-|               LZ4MsgPackCli | 361.0 μs | 83.46 μs | 244.78 μs | 221.7 μs |  1.45 |    1.14 | 1079 |
-|           LZ4NewtonsoftJson | 324.0 μs | 32.12 μs |  91.63 μs | 297.1 μs |  1.28 |    0.53 | 2707 |
-|           LZ4SystemTextJson | 307.6 μs | 49.86 μs | 142.27 μs | 243.3 μs |  1.19 |    0.62 | 2705 |
-|                 LZ4Utf8Json | 314.2 μs | 53.21 μs | 153.52 μs | 251.1 μs |  1.29 |    0.80 | 2895 |
+|                      Method |     Mean |    Error |    StdDev |   Median | Ratio | RatioSD |  Size | SizeRatio |
+|---------------------------- |---------:|---------:|----------:|---------:|------:|--------:|------:|----------:|
+|                 MessagePack | 224.2 μs | 43.83 μs | 124.33 μs | 169.3 μs |  0.75 |    0.42 | 10950 |      0.86 |
+|                  MsgPackCli | 339.1 μs | 76.21 μs | 221.11 μs | 225.4 μs |  1.13 |    0.75 |  7586 |      0.60 |
+|              NewtonsoftJson | 309.8 μs | 23.44 μs |  66.12 μs | 292.9 μs |  1.00 |    0.00 | 12661 |      1.00 |
+|              SystemTextJson | 277.5 μs | 35.93 μs | 100.76 μs | 238.8 μs |  0.91 |    0.32 | 12603 |      1.00 |
+|                    Utf8Json | 261.6 μs | 45.95 μs | 133.32 μs | 197.3 μs |  0.90 |    0.50 | 13156 |      1.04 |
+|    DeflateStreamMessagePack | 520.8 μs | 56.43 μs | 162.80 μs | 437.5 μs |  1.76 |    0.65 |  5867 |      0.46 |
+|     DeflateStreamMsgPackCli | 554.4 μs | 69.63 μs | 200.89 μs | 448.8 μs |  1.79 |    0.61 |  4795 |      0.38 |
+| DeflateStreamNewtonsoftJson | 605.1 μs | 24.34 μs |  68.24 μs | 585.1 μs |  2.01 |    0.35 |  5900 |      0.47 |
+| DeflateStreamSystemTextJson | 570.8 μs | 48.21 μs | 138.34 μs | 509.3 μs |  1.90 |    0.49 |  5884 |      0.46 |
+|       DeflateStreamUtf8Json | 558.8 μs | 47.20 μs | 135.42 μs | 500.3 μs |  1.87 |    0.52 |  6130 |      0.48 |
+|              LZ4MessagePack | 326.7 μs | 55.54 μs | 160.24 μs | 246.6 μs |  1.11 |    0.59 |  8103 |      0.64 |
+|               LZ4MsgPackCli | 403.7 μs | 78.45 μs | 228.85 μs | 286.7 μs |  1.37 |    0.82 |  6797 |      0.54 |
+|           LZ4NewtonsoftJson | 399.5 μs | 20.68 μs |  57.99 μs | 386.0 μs |  1.32 |    0.20 |  8993 |      0.71 |
+|           LZ4SystemTextJson | 355.2 μs | 41.45 μs | 116.90 μs | 304.5 μs |  1.19 |    0.43 |  8977 |      0.71 |
+|                 LZ4Utf8Json | 344.0 μs | 42.99 μs | 122.67 μs | 287.5 μs |  1.14 |    0.40 |  9289 |      0.73 |
 
 ## Deserialization and decompression benchmark report
 
@@ -62,18 +62,18 @@ Intel Core i7-8550U CPU 1.80GHz (Kaby Lake R), 1 CPU, 8 logical and 4 physical c
 ```
 |                      Method |     Mean |     Error |    StdDev |   Median | Ratio | RatioSD |
 |---------------------------- |---------:|----------:|----------:|---------:|------:|--------:|
-|                 MessagePack | 221.3 μs |  32.86 μs |  94.27 μs | 183.7 μs |  0.66 |    0.21 |
-|                  MsgPackCli | 515.8 μs | 133.86 μs | 394.70 μs | 277.1 μs |  1.57 |    1.15 |
-|              NewtonsoftJson | 336.9 μs |  32.89 μs |  95.43 μs | 306.3 μs |  1.00 |    0.00 |
-|              SystemTextJson | 293.6 μs |  42.23 μs | 121.83 μs | 244.0 μs |  0.89 |    0.34 |
-|                    Utf8Json | 229.0 μs |  23.73 μs |  67.69 μs | 198.8 μs |  0.72 |    0.26 |
-|    DeflateStreamMessagePack | 291.8 μs |  42.96 μs | 123.27 μs | 234.5 μs |  0.87 |    0.27 |
-|     DeflateStreamMsgPackCli | 528.2 μs | 119.18 μs | 349.53 μs | 329.3 μs |  1.64 |    1.13 |
-| DeflateStreamNewtonsoftJson | 393.1 μs |  33.76 μs |  97.39 μs | 366.0 μs |  1.20 |    0.25 |
-| DeflateStreamSystemTextJson | 353.8 μs |  48.15 μs | 139.68 μs | 287.3 μs |  1.07 |    0.36 |
-|       DeflateStreamUtf8Json | 307.5 μs |  34.47 μs | 100.55 μs | 258.0 μs |  0.97 |    0.37 |
-|              LZ4MessagePack | 230.9 μs |  35.10 μs | 100.71 μs | 189.0 μs |  0.69 |    0.24 |
-|               LZ4MsgPackCli | 479.5 μs | 111.80 μs | 327.90 μs | 300.8 μs |  1.45 |    0.92 |
-|           LZ4NewtonsoftJson | 347.2 μs |  32.95 μs |  95.59 μs | 308.2 μs |  1.06 |    0.24 |
-|           LZ4SystemTextJson | 295.5 μs |  44.91 μs | 131.00 μs | 237.4 μs |  0.91 |    0.38 |
-|                 LZ4Utf8Json | 253.3 μs |  25.46 μs |  73.47 μs | 214.8 μs |  0.77 |    0.20 |
+|                 MessagePack | 245.1 μs |  28.24 μs |  80.11 μs | 209.6 μs |  0.63 |    0.18 |
+|                  MsgPackCli | 462.0 μs | 109.30 μs | 318.83 μs | 288.7 μs |  1.19 |    0.76 |
+|              NewtonsoftJson | 395.5 μs |  29.25 μs |  82.50 μs | 386.9 μs |  1.00 |    0.00 |
+|              SystemTextJson | 300.9 μs |  27.56 μs |  77.73 μs | 268.3 μs |  0.77 |    0.15 |
+|                    Utf8Json | 221.1 μs |  19.27 μs |  54.67 μs | 201.9 μs |  0.58 |    0.19 |
+|    DeflateStreamMessagePack | 336.7 μs |  34.65 μs |  98.29 μs | 297.4 μs |  0.86 |    0.16 |
+|     DeflateStreamMsgPackCli | 543.2 μs | 111.26 μs | 322.80 μs | 373.2 μs |  1.40 |    0.77 |
+| DeflateStreamNewtonsoftJson | 496.2 μs |  36.32 μs | 104.78 μs | 470.6 μs |  1.29 |    0.24 |
+| DeflateStreamSystemTextJson | 404.8 μs |  45.14 μs | 128.05 μs | 360.4 μs |  1.04 |    0.29 |
+|       DeflateStreamUtf8Json | 331.7 μs |  27.84 μs |  79.44 μs | 303.3 μs |  0.88 |    0.28 |
+|              LZ4MessagePack | 248.7 μs |  31.17 μs |  87.91 μs | 218.2 μs |  0.62 |    0.15 |
+|               LZ4MsgPackCli | 476.3 μs | 107.66 μs | 314.04 μs | 305.4 μs |  1.23 |    0.78 |
+|           LZ4NewtonsoftJson | 408.3 μs |  31.44 μs |  90.71 μs | 398.7 μs |  1.05 |    0.16 |
+|           LZ4SystemTextJson | 301.9 μs |  30.14 μs |  83.52 μs | 282.4 μs |  0.77 |    0.14 |
+|                 LZ4Utf8Json | 239.5 μs |  22.86 μs |  65.59 μs | 215.5 μs |  0.63 |    0.20 |

@@ -12,6 +12,7 @@ namespace DotnetSerializationCompressionBenchmark
             public Config()
             {
                 AddColumn(new SizeColumn());
+                AddColumn(new SizeRatioColumn());
             }
         }
 

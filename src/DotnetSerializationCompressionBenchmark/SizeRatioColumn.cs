@@ -7,25 +7,32 @@ using DotnetSerializationCompressionBenchmark.Processors;
 
 namespace DotnetSerializationCompressionBenchmark
 {
-    public class SizeColumn : IColumn
+    public class SizeRatioColumn : IColumn
     {
-        public string Id => "Size";
-        public string ColumnName => "Size";
+        public string Id => "SizeRatio";
+        public string ColumnName => "SizeRatio";
         public bool AlwaysShow => true;
         public ColumnCategory Category => ColumnCategory.Custom;
         public int PriorityInCategory => 0;
         public bool IsNumeric => true;
         public UnitType UnitType => UnitType.Size;
-        public string Legend => "Size in bytes";
+        public string Legend => "Size ratio";
 
         public string GetValue(Summary summary, BenchmarkCase benchmarkCase)
         {
-            if (Enum.TryParse<ProcessorType>(benchmarkCase.Descriptor.Categories.First(), out var processorType))
+            var baseline = summary.BenchmarksCases.Single(summary.IsBaseline);
+
+            if (!Enum.TryParse<ProcessorType>(baseline.Descriptor.Categories.First(), out var baselineProcessorType))
             {
-                return ProcessorFactory.Instance[processorType].SizeBytes.ToString();
+                return string.Empty;
             }
 
-            return string.Empty;
+            if (!Enum.TryParse<ProcessorType>(benchmarkCase.Descriptor.Categories.First(), out var currentProcessorType))
+            {
+                return string.Empty;
+            }
+
+            return (1.0 * ProcessorFactory.Instance[currentProcessorType].SizeBytes / ProcessorFactory.Instance[baselineProcessorType].SizeBytes).ToString("F2");
         }
 
         public string GetValue(Summary summary, BenchmarkCase benchmarkCase, SummaryStyle style) => GetValue(summary, benchmarkCase);
