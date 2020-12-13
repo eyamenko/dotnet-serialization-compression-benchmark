@@ -10,7 +10,7 @@ namespace DotnetSerializationCompressionBenchmark.Tests
 {
     public class ProcessorTests
     {
-        public static IEnumerable<object[]> TestProcessors => ProcessorFactory.Listing.All().Select(p => new[] { p });
+        public static IEnumerable<object[]> TestProcessors => ProcessorFactory.Instance.All().Select(p => new[] { p });
 
         [Theory]
         [MemberData(nameof(TestProcessors))]
@@ -18,7 +18,7 @@ namespace DotnetSerializationCompressionBenchmark.Tests
         {
             var processedListing = processor.Unprocess();
 
-            processedListing.Should().BeEquivalentTo(Listing.Sample);
+            processedListing.Should().BeEquivalentTo(processor.Item);
         }
     }
 }

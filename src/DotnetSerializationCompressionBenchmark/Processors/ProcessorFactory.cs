@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
+using AutoFixture;
 using DotnetSerializationCompressionBenchmark.Contracts;
 using DotnetSerializationCompressionBenchmark.Models;
 
@@ -7,7 +8,7 @@ namespace DotnetSerializationCompressionBenchmark.Processors
 {
     public static class ProcessorFactory
     {
-        public static readonly IProcessorFactory<Listing> Listing = new ProcessorFactoryPrivate<Listing>(Models.Listing.Sample);
+        public static readonly IProcessorFactory<Listing> Instance = new ProcessorFactoryPrivate<Listing>(new Fixture().Create<Listing>());
 
         private class ProcessorFactoryPrivate<T> : IProcessorFactory<T>
         {

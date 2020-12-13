@@ -17,62 +17,62 @@ namespace DotnetSerializationCompressionBenchmark
 
         [Benchmark]
         [BenchmarkCategory(nameof(ProcessorType.MessagePack))]
-        public byte[] MessagePack() => ProcessorFactory.Listing[ProcessorType.MessagePack].Process();
+        public byte[] MessagePack() => ProcessorFactory.Instance[ProcessorType.MessagePack].Process();
 
         [Benchmark]
         [BenchmarkCategory(nameof(ProcessorType.MsgPackCli))]
-        public byte[] MsgPackCli() => ProcessorFactory.Listing[ProcessorType.MsgPackCli].Process();
+        public byte[] MsgPackCli() => ProcessorFactory.Instance[ProcessorType.MsgPackCli].Process();
 
         [Benchmark(Baseline = true)]
         [BenchmarkCategory(nameof(ProcessorType.NewtonsoftJson))]
-        public byte[] NewtonsoftJson() => ProcessorFactory.Listing[ProcessorType.NewtonsoftJson].Process();
+        public byte[] NewtonsoftJson() => ProcessorFactory.Instance[ProcessorType.NewtonsoftJson].Process();
 
         [Benchmark]
         [BenchmarkCategory(nameof(ProcessorType.SystemTextJson))]
-        public byte[] SystemTextJson() => ProcessorFactory.Listing[ProcessorType.SystemTextJson].Process();
+        public byte[] SystemTextJson() => ProcessorFactory.Instance[ProcessorType.SystemTextJson].Process();
 
         [Benchmark]
         [BenchmarkCategory(nameof(ProcessorType.Utf8Json))]
-        public byte[] Utf8Json() => ProcessorFactory.Listing[ProcessorType.Utf8Json].Process();
+        public byte[] Utf8Json() => ProcessorFactory.Instance[ProcessorType.Utf8Json].Process();
 
         [Benchmark]
         [BenchmarkCategory(nameof(ProcessorType.DeflateStreamMessagePack))]
-        public byte[] DeflateStreamMessagePack() => ProcessorFactory.Listing[ProcessorType.DeflateStreamMessagePack].Process();
+        public byte[] DeflateStreamMessagePack() => ProcessorFactory.Instance[ProcessorType.DeflateStreamMessagePack].Process();
 
         [Benchmark]
         [BenchmarkCategory(nameof(ProcessorType.DeflateStreamMsgPackCli))]
-        public byte[] DeflateStreamMsgPackCli() => ProcessorFactory.Listing[ProcessorType.DeflateStreamMsgPackCli].Process();
+        public byte[] DeflateStreamMsgPackCli() => ProcessorFactory.Instance[ProcessorType.DeflateStreamMsgPackCli].Process();
 
         [Benchmark]
         [BenchmarkCategory(nameof(ProcessorType.DeflateStreamNewtonsoftJson))]
-        public byte[] DeflateStreamNewtonsoftJson() => ProcessorFactory.Listing[ProcessorType.DeflateStreamNewtonsoftJson].Process();
+        public byte[] DeflateStreamNewtonsoftJson() => ProcessorFactory.Instance[ProcessorType.DeflateStreamNewtonsoftJson].Process();
 
         [Benchmark]
         [BenchmarkCategory(nameof(ProcessorType.DeflateStreamSystemTextJson))]
-        public byte[] DeflateStreamSystemTextJson() => ProcessorFactory.Listing[ProcessorType.DeflateStreamSystemTextJson].Process();
+        public byte[] DeflateStreamSystemTextJson() => ProcessorFactory.Instance[ProcessorType.DeflateStreamSystemTextJson].Process();
 
         [Benchmark]
         [BenchmarkCategory(nameof(ProcessorType.DeflateStreamUtf8Json))]
-        public byte[] DeflateStreamUtf8Json() => ProcessorFactory.Listing[ProcessorType.DeflateStreamUtf8Json].Process();
+        public byte[] DeflateStreamUtf8Json() => ProcessorFactory.Instance[ProcessorType.DeflateStreamUtf8Json].Process();
 
         [Benchmark]
         [BenchmarkCategory(nameof(ProcessorType.LZ4MessagePack))]
-        public byte[] LZ4MessagePack() => ProcessorFactory.Listing[ProcessorType.LZ4MessagePack].Process();
+        public byte[] LZ4MessagePack() => ProcessorFactory.Instance[ProcessorType.LZ4MessagePack].Process();
 
         [Benchmark]
         [BenchmarkCategory(nameof(ProcessorType.LZ4MsgPackCli))]
-        public byte[] LZ4MsgPackCli() => ProcessorFactory.Listing[ProcessorType.LZ4MsgPackCli].Process();
+        public byte[] LZ4MsgPackCli() => ProcessorFactory.Instance[ProcessorType.LZ4MsgPackCli].Process();
 
         [Benchmark]
         [BenchmarkCategory(nameof(ProcessorType.LZ4NewtonsoftJson))]
-        public byte[] LZ4NewtonsoftJson() => ProcessorFactory.Listing[ProcessorType.LZ4NewtonsoftJson].Process();
+        public byte[] LZ4NewtonsoftJson() => ProcessorFactory.Instance[ProcessorType.LZ4NewtonsoftJson].Process();
 
         [Benchmark]
         [BenchmarkCategory(nameof(ProcessorType.LZ4SystemTextJson))]
-        public byte[] LZ4SystemTextJson() => ProcessorFactory.Listing[ProcessorType.LZ4SystemTextJson].Process();
+        public byte[] LZ4SystemTextJson() => ProcessorFactory.Instance[ProcessorType.LZ4SystemTextJson].Process();
 
         [Benchmark]
         [BenchmarkCategory(nameof(ProcessorType.LZ4Utf8Json))]
-        public byte[] LZ4Utf8Json() => ProcessorFactory.Listing[ProcessorType.LZ4Utf8Json].Process();
+        public byte[] LZ4Utf8Json() => ProcessorFactory.Instance[ProcessorType.LZ4Utf8Json].Process();
     }
 }

@@ -17,6 +17,8 @@ namespace DotnetSerializationCompressionBenchmark.Processors
 
         public int SizeBytes => _bytes.Length;
 
+        public T Item => _item;
+
         public byte[] Process() => _processor.Process(_item);
 
         public T Unprocess() => _processor.Unprocess<T>(_bytes);

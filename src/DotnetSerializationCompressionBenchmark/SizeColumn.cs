@@ -24,7 +24,7 @@ namespace DotnetSerializationCompressionBenchmark
 
             if (categories.Length == 1 && Enum.TryParse<ProcessorType>(categories.First(), true, out var processorType))
             {
-                return ProcessorFactory.Listing[processorType].SizeBytes.ToString();
+                return ProcessorFactory.Instance[processorType].SizeBytes.ToString();
             }
 
             return string.Empty;
